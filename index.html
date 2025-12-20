@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>XI TKJ 3</title>
 
-  <!-- Google Font -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script>
     tailwind.config = {
       theme: {
@@ -45,7 +44,7 @@
     </nav>
   </div>
 
-  <!-- MOBILE DROPDOWN -->
+  <!-- MOBILE NAV -->
   <div id="mobileNav" class="hidden flex-col bg-white border-t md:hidden">
     <a href="#beranda" class="px-4 py-3 border-b">Beranda</a>
     <a href="#jadwal" class="px-4 py-3 border-b">Jadwal</a>
@@ -58,10 +57,12 @@
 
   <!-- BERANDA -->
   <section id="beranda" class="space-y-4">
-    <img src="assets/img/kelas.jpg" alt="Kelas" class="rounded-xl shadow">
-    <h2 class="text-xl font-semibold">Selamat Datang di XI TKJ 3</h2>
+    <img src="assets/img/kelas.jpg" alt="Foto Kelas" class="rounded-xl shadow">
+    <h2 class="text-xl font-semibold">
+      Selamat Datang di Website Kelas XI TKJ 3
+    </h2>
     <p class="text-sm leading-relaxed">
-      Website ini menjadi pusat informasi, dokumentasi kegiatan,
+      Website ini dibuat sebagai pusat informasi, dokumentasi kegiatan,
       dan catatan prestasi kelas <strong>XI TKJ 3</strong>.
     </p>
   </section>
@@ -70,7 +71,7 @@
   <section id="jadwal" class="space-y-4">
     <h2 class="text-xl font-semibold">Jadwal Pelajaran</h2>
 
-    <!-- CARD -->
+    <!-- Senin -->
     <div class="bg-white rounded-xl p-4 shadow space-y-2">
       <div class="flex justify-between font-semibold">
         <span>Senin</span>
@@ -84,6 +85,7 @@
       </ul>
     </div>
 
+    <!-- Selasa -->
     <div class="bg-white rounded-xl p-4 shadow space-y-2">
       <div class="flex justify-between font-semibold">
         <span>Selasa</span>
@@ -98,6 +100,7 @@
       </ul>
     </div>
 
+    <!-- Rabu -->
     <div class="bg-white rounded-xl p-4 shadow space-y-2">
       <div class="flex justify-between font-semibold">
         <span>Rabu</span>
@@ -108,6 +111,31 @@
         <li>Web</li>
       </ul>
     </div>
+
+    <!-- Kamis -->
+    <div class="bg-white rounded-xl p-4 shadow space-y-2">
+      <div class="flex justify-between font-semibold">
+        <span>Kamis</span>
+        <span>F32</span>
+      </div>
+      <ul class="list-disc list-inside text-sm">
+        <li>PKK</li>
+        <li>Bahasa Jawa</li>
+        <li>Sejarah Indonesia</li>
+        <li>Web</li>
+      </ul>
+    </div>
+
+    <!-- Jumat -->
+    <div class="bg-white rounded-xl p-4 shadow space-y-2">
+      <div class="flex justify-between font-semibold">
+        <span>Jumat</span>
+        <span>Lab 1</span>
+      </div>
+      <ul class="list-disc list-inside text-sm">
+        <li>Praktikum</li>
+      </ul>
+    </div>
   </section>
 
   <!-- PRESTASI -->
@@ -116,17 +144,17 @@
 
     <div class="bg-white p-4 rounded-xl shadow">
       <h3 class="font-semibold">Rahmatan Ihsan</h3>
-      <p class="text-sm">Juara 1 Tenis Meja tingkat Kabupaten</p>
+      <p class="text-sm">Juara 1 Lomba Tenis Meja tingkat Kabupaten</p>
     </div>
 
     <div class="bg-white p-4 rounded-xl shadow">
       <h3 class="font-semibold">Aisyah Suciana</h3>
-      <p class="text-sm">Juara 3 Tapak Suci tingkat Provinsi</p>
+      <p class="text-sm">Juara 3 Lomba Tapak Suci tingkat Provinsi</p>
     </div>
 
     <div class="bg-white p-4 rounded-xl shadow">
-      <h3 class="font-semibold">Vallen Gabriel</h3>
-      <p class="text-sm">Juara 1 Renang tingkat Internasional</p>
+      <h3 class="font-semibold">Vallen Gabriel Samsih Putra</h3>
+      <p class="text-sm">Juara 1 Lomba Renang tingkat Internasional</p>
     </div>
   </section>
 
@@ -144,11 +172,9 @@
 
 <!-- FOOTER -->
 <footer class="text-center text-xs text-slate-500 py-6">
-  © XI TKJ 3 — 2025
+  © XI TKJ 3, 2025
 </footer>
 
-<!-- JS -->
 <script src="script.js"></script>
-
 </body>
 </html>
