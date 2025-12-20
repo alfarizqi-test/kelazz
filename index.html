@@ -1,146 +1,154 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XI TKJ 3</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XI TKJ 3</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-    <header>
-        <div class="ic">
-            <img class="ico-img" src="assets/icon/tkj-3.jpg" alt="TKJ-3">
-            <h2>XI TKJ 3</h2>
-        </div>
-        <nav class="dropdown">
-            <img class="nav-img" src="assets/icon/list.png" alt="Nav" onclick="toggleDropdown()">
-            <div id="navMenu" class="dropdown-content">
-                <a href="#1">Beranda</a>
-                <a href="#2">Jadwal</a>
-                <a href="#3">Penghargaan</a>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div id="content">
-            <article id="1">
-                <img src="assets/img/kelas.jpg" alt="foto" class="img">
-                <h2>Selamat Datang di Website Kelas XI TKJ 3</h2>
-                <p><strong>Halo semua!</strong> Selamat datang di website resmi kelas XI TKJ 3. <br>Website ini dibuat untuk menjadi wadah informasi, dokumentasi kegiatan, dan catatan prestasi kita bersama.</p>
-            </article>
-            <article id="2">
-                <h2>Jadwal Pelajaran</h2>
-                <div class="day">
-                    <div class="inf">
-                        <h3>Senin</h3>
-                        <h4>F23</h4>
-                    </div>
-                    <ul>
-                        <li>Upacara</li>
-                        <li>PAIBP</li>
-                        <li>Bahasa Indonesia</li>
-                        <li>Bahasa Inggris</li>
-                    </ul>
-                </div>
-                <div class="day">
-                    <div class="inf">
-                        <h3>Selasa</h3>
-                        <h4>F24</h4>
-                    </div>
-                    <ul>
-                        <li>Olah Raga</li>
-                        <li>Bahasa Arab</li>
-                        <li>Kemuhammadiyahan</li>
-                        <li>BK</li>
-                        <li>Matematika</li>
-                    </ul>
-                </div>
-                <div class="day">
-                    <div class="inf">
-                        <h3>Rabu</h3>
-                        <h4>Lab 1</h4>
-                    </div>
-                    <ul>
-                        <li>Pratikum</li>
-                        <li>Web</li>
-                    </ul>
-                </div>
-                <div class="day">
-                    <div class="inf">
-                        <h3>Kamis</h3>
-                        <h4>F32</h4>
-                    </div>
-                    <ul>
-                        <li>PKK</li>
-                        <li>Bahasa Jawa</li>
-                        <li>Sejarah Indonesia</li>
-                        <li>Web</li>
-                    </ul>
-                </div>
-                <div class="day">
-                    <div class="inf">
-                        <h3>Jum'at</h3>
-                        <h4>Lab 1</h4>
-                    </div>
-                    <ul>
-                        <li>Praktikum</li>
-                    </ul>
-                </div>
-            </article>
-            <article id="3">
-                <h2>Penghargaan</h2>
-                <p>Daftar penghargaan yang di raih siswa dan siswi kelas XI TKJ 3</p>
-                <div class="itm">
-                    <div class="inf">
-                        <h3>Rahmatan Ihsan</h3>
-                        <h4>Juara Tenis Meja</h4>
-                    </div>
-                    <p>Rahmatan Ihsan menerima penghargaan sebagai <strong>Juara 1 Lomba Tenis Meja tingkat Kabupaten.</strong></p>
-                </div>
-                <div class="itm">
-                    <div class="inf">
-                        <h3>Aisyah Suciana</h3>
-                        <h4>Juara Tapak Suci</h4>
-                    </div>
-                    <p>Aisyah Suciana menerima penghargaan sebagai <strong>Juara 3 Lomba Tapak Suci tingkat Provinsi.</strong></p>
-                </div>
-                <div class="itm">
-                    <div class="inf">
-                        <h3>Vallen Gabriel Samsih Putra</h3>
-                        <h4>Juara Renang</h4>
-                    </div>
-                    <p>Vallen Gabriel Samsih Putra menerima penghargaan sebagai <strong>Juara 1 Lomba Renang tingkat Internasional.</strong></p>
-                </div>
-            </article>
-        </div>
-        <aside>
-            <h3>XI TKJ 3</h3>
-            <img class="asideimg" src="assets/icon/tkj-3.jpg" alt="Logo TKJ 3">
-            <table>
-                <caption>Struktur Organisasi</caption>
-                <tr>
-                    <th>Jabatan</th>
-                    <th>Nama</th>
-                </tr>
-                <tr>
-                    <td>Wali Kelas</td>
-                    <td>Nufan Rizqi Prasetya</td>
-                </tr>
-                <tr>
-                    <td>Ketua Kelas</td>
-                    <td>Ramon Dema</td>
-                </tr>
-                <tr>
-                    <td>Wakil Ketua</td>
-                    <td>Vallen Gabriel</td>
-                </tr>
-            </table>
-        </aside>
-    </main>
-    <footer>
-        <p>&copy; XI TKJ 3, 2025</p>
-    </footer>
-    <script src="script.js"></script>
+
+<body class="font-poppins bg-slate-100 text-slate-800">
+
+<!-- HEADER -->
+<header class="bg-white shadow fixed top-0 w-full z-50">
+  <div class="flex items-center justify-between px-4 py-3">
+    <div class="flex items-center gap-3">
+      <img src="assets/icon/tkj-3.jpg" alt="TKJ 3" class="w-10 h-10 rounded-full">
+      <h1 class="font-semibold text-lg">XI TKJ 3</h1>
+    </div>
+
+    <button onclick="toggleNav()" class="md:hidden">
+      <img src="assets/icon/list.png" alt="Menu" class="w-7 h-7">
+    </button>
+
+    <nav class="hidden md:flex gap-6 font-medium">
+      <a href="#beranda" class="hover:text-blue-600">Beranda</a>
+      <a href="#jadwal" class="hover:text-blue-600">Jadwal</a>
+      <a href="#prestasi" class="hover:text-blue-600">Prestasi</a>
+    </nav>
+  </div>
+
+  <!-- MOBILE DROPDOWN -->
+  <div id="mobileNav" class="hidden flex-col bg-white border-t md:hidden">
+    <a href="#beranda" class="px-4 py-3 border-b">Beranda</a>
+    <a href="#jadwal" class="px-4 py-3 border-b">Jadwal</a>
+    <a href="#prestasi" class="px-4 py-3">Prestasi</a>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="pt-24 px-4 space-y-12 max-w-md mx-auto">
+
+  <!-- BERANDA -->
+  <section id="beranda" class="space-y-4">
+    <img src="assets/img/kelas.jpg" alt="Kelas" class="rounded-xl shadow">
+    <h2 class="text-xl font-semibold">Selamat Datang di XI TKJ 3</h2>
+    <p class="text-sm leading-relaxed">
+      Website ini menjadi pusat informasi, dokumentasi kegiatan,
+      dan catatan prestasi kelas <strong>XI TKJ 3</strong>.
+    </p>
+  </section>
+
+  <!-- JADWAL -->
+  <section id="jadwal" class="space-y-4">
+    <h2 class="text-xl font-semibold">Jadwal Pelajaran</h2>
+
+    <!-- CARD -->
+    <div class="bg-white rounded-xl p-4 shadow space-y-2">
+      <div class="flex justify-between font-semibold">
+        <span>Senin</span>
+        <span>F23</span>
+      </div>
+      <ul class="list-disc list-inside text-sm">
+        <li>Upacara</li>
+        <li>PAIBP</li>
+        <li>Bahasa Indonesia</li>
+        <li>Bahasa Inggris</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl p-4 shadow space-y-2">
+      <div class="flex justify-between font-semibold">
+        <span>Selasa</span>
+        <span>F24</span>
+      </div>
+      <ul class="list-disc list-inside text-sm">
+        <li>Olahraga</li>
+        <li>Bahasa Arab</li>
+        <li>Kemuhammadiyahan</li>
+        <li>BK</li>
+        <li>Matematika</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl p-4 shadow space-y-2">
+      <div class="flex justify-between font-semibold">
+        <span>Rabu</span>
+        <span>Lab 1</span>
+      </div>
+      <ul class="list-disc list-inside text-sm">
+        <li>Praktikum</li>
+        <li>Web</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRESTASI -->
+  <section id="prestasi" class="space-y-4">
+    <h2 class="text-xl font-semibold">Penghargaan</h2>
+
+    <div class="bg-white p-4 rounded-xl shadow">
+      <h3 class="font-semibold">Rahmatan Ihsan</h3>
+      <p class="text-sm">Juara 1 Tenis Meja tingkat Kabupaten</p>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl shadow">
+      <h3 class="font-semibold">Aisyah Suciana</h3>
+      <p class="text-sm">Juara 3 Tapak Suci tingkat Provinsi</p>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl shadow">
+      <h3 class="font-semibold">Vallen Gabriel</h3>
+      <p class="text-sm">Juara 1 Renang tingkat Internasional</p>
+    </div>
+  </section>
+
+  <!-- SOSIAL MEDIA -->
+  <section class="bg-blue-600 text-white p-5 rounded-xl space-y-3">
+    <h2 class="font-semibold text-lg">Sosial Media Kelas</h2>
+    <div class="flex gap-4 text-sm">
+      <a href="#" class="underline">Instagram</a>
+      <a href="#" class="underline">TikTok</a>
+      <a href="#" class="underline">WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center text-xs text-slate-500 py-6">
+  © XI TKJ 3 — 2025
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+
 </body>
 </html>
