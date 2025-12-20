@@ -1,15 +1,16 @@
-function toggleDropdown() {
-  document.getElementById("navMenu").classList.toggle("show");
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.querySelector("button[onclick]");
+  const mobileNav = document.getElementById("mobileNav");
 
-window.onclick = function(event) {
-  if (!event.target.matches('.nav-img')) {
-    let dropdowns = document.getElementsByClassName("dropdown-content");
-    for (let i = 0; i < dropdowns.length; i++) {
-      let openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+  // toggle menu
+  window.toggleNav = function () {
+    mobileNav.classList.toggle("hidden");
+  };
+
+  // klik di luar menu → tutup
+  document.addEventListener("click", (e) => {
+    if (!mobileNav.contains(e.target) && !toggleButton.contains(e.target)) {
+      mobileNav.classList.add("hidden");
     }
-  }
-}
+  });
+});
