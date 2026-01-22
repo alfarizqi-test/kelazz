@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="icon"
+      href="src/img/icons8-arch-linux-96.png"
+      type="image/x-icon"
+    />
+    <title>Architect</title>
+  </head>
+
+  <body>
+    <div class="page">
+
+      <!--Header-->
+      <header class="header">
+        <nav aria-label="Global" class="navbar">
+          <div class="navbar__left">
+            <a href="#" class="brand-link">
+              <span class="sr-only">Architect</span>
+              <img
+                src="src/img/icons8-arch-linux-96.png"
+                alt=""
+                class="brand-logo"
+              />
+            </a>
+          </div>
+
+          <div class="navbar__mobile">
+            <button
+              type="button"
+              command="show-modal"
+              commandfor="mobile-menu"
+              class="btn-mobile-menu"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                data-slot="icon"
+                aria-hidden="true"
+                class="icon-24"
+              >
+                <path
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="navbar__links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#product" class="nav-link">Product</a>
+            <a href="#testimony" class="nav-link">Testimony</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+
+          <div class="navbar__right">
+            <a href="#" class="nav-link"
+              >Log in <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <el-dialog>
+          <dialog id="mobile-menu" class="mobile-dialog">
+            <div tabindex="0" class="mobile-overlay">
+              <el-dialog-panel class="mobile-panel">
+                <div class="mobile-panel__top">
+                  <a href="#" class="brand-link">
+                    <span class="sr-only">Architect</span>
+                    <img
+                      src="src/img/icons8-arch-linux-96.png"
+                      alt=""
+                      class="brand-logo"
+                    />
+                  </a>
+
+                  <button
+                    type="button"
+                    command="close"
+                    commandfor="mobile-menu"
+                    class="btn-mobile-close"
+                  >
+                    <span class="sr-only">Close menu</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      data-slot="icon"
+                      aria-hidden="true"
+                      class="icon-24"
+                    >
+                      <path
+                        d="M6 18 18 6M6 6l12 12"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="mobile-panel__content">
+                  <div class="mobile-menu">
+                    <div class="mobile-menu__links">
+                      <a href="#about" class="mobile-link">About</a>
+                      <a href="#product" class="mobile-link">Product</a>
+                      <a href="#testimony" class="mobile-link">Testimony</a>
+                      <a href="#contact" class="mobile-link">Contact</a>
+                    </div>
+
+                    <div class="mobile-menu__login">
+                      <a href="#" class="mobile-link mobile-link--login"
+                        >Log in</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </el-dialog-panel>
+            </div>
+          </dialog>
+        </el-dialog>
+      </header>
+
+      <!--Hero-->
+      <section class="hero">
+        <img
+          src="src/img/Arch_Linux_neofetch.png"
+          alt=""
+          class="hero__bg-image"
+        />
+
+        <div class="hero__container">
+          <div class="hero__announce">
+            <div class="announce-pill">
+              Announcing our next round of funding.
+              <a href="#testimony" class="announce-link">
+                <span aria-hidden="true" class="absolute-fill"></span>
+                Read more <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__content">
+            <h1 class="hero__title">
+              It's not just a gadget, It's a digital weapon.
+            </h1>
+
+            <p class="hero__subtitle">
+              Built on Linux, designed for developers and security professionals
+              who demand full control, performance, and transparency.
+            </p>
+
+            <div class="hero__actions">
+              <a href="#product" class="btn-primary">Get started</a>
+              <a href="#about" class="btn-link"
+                >Learn more <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Companies-->
+      <section class="companies">
+        <div class="container">
+          <h2 class="companies__title">
+            Designed for modern development and open technology ecosystems
+          </h2>
+
+          <div class="companies__grid">
+            <img src="src/img/kali-linux.png" alt="Kali" class="company-logo" />
+            <img src="src/img/Git-Logo-Black.svg" alt="Git" class="company-logo" />
+            <img
+              src="src/img/archlinux-logo-black-90dpi.png"
+              alt="Arch"
+              class="company-logo"
+            />
+            <img src="src/img/docker.png" alt="Docker" class="company-logo" />
+            <img src="src/img/owasp.png" alt="OWASP" class="company-logo" />
+          </div>
+        </div>
+      </section>
+
+      <!--About-->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="about__intro">
+            <h2 class="about__title">About</h2>
+            <p class="about__desc">
+              We provide Linux-based devices built for developers and
+              cybersecurity professionals who demand control, security, and
+              openness. Not just gadgets, digital weapons for building and
+              defending modern systems.
+            </p>
+          </div>
+
+          <div class="about__links">
+            <a href="#" class="about-link">Open roles →</a>
+            <a href="#" class="about-link">Internship program →</a>
+            <a href="#" class="about-link">Our values →</a>
+            <a href="#" class="about-link">Meet our leadership →</a>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat">
+              <div class="stat__value">25+</div>
+              <div class="stat__label">Supported Linux distro</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">300+</div>
+              <div class="stat__label">Tested Linux configurations</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">500+</div>
+              <div class="stat__label">Open-source tools compatible</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">100%</div>
+              <div class="stat__label">User-controlled systems</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Product-->
+      <section id="product" class="product">
+        <div class="container">
+          <h2 class="product__title">Customers also purchased</h2>
+
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="src/img/ArchServer.png" alt="ArchServer" class="product-img" />
+              <div class="product-info">
+                <div>
+                  <h3 class="product-name"><a href="#">ArchServer</a></h3>
+                  <p class="product-desc">Infrastructure Server</p>
+                </div>
+                <p class="product-price">$2,499</p>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <img src="src/img/ArchPC.png" alt="ArchPC" class="product-img" />
+              <div class="product-info">
+                <div>
+                  <h3 class="product-name"><a href="#">ArchPC</a></h3>
+                  <p class="product-desc">Developer Workstation</p>
+                </div>
+                <p class="product-price">$1,899</p>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <img src="src/img/ArchBook.png" alt="ArchBook" class="product-img" />
+              <div class="product-info">
+                <div>
+                  <h3 class="product-name"><a href="#">ArchBook</a></h3>
+                  <p class="product-desc">Portable Dev Machine</p>
+                </div>
+                <p class="product-price">$1,599</p>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <img src="src/img/ArchPhone.png" alt="ArchPhone" class="product-img" />
+              <div class="product-info">
+                <div>
+                  <h3 class="product-name"><a href="#">ArchPhone</a></h3>
+                  <p class="product-desc">Mobile Dev Device</p>
+                </div>
+                <p class="product-price">$899</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Testimony-->
+      <section id="testimony" class="testimony">
+        <div class="container">
+          <div class="testimony__intro">
+            <h2 class="testimony__title">Feedback from the field</h2>
+            <p class="testimony__desc">
+              Real feedback from developers and security practitioners using
+              open systems in their daily work.
+            </p>
+          </div>
+
+          <div class="testimony-grid">
+            <!-- Card 1 -->
+            <article class="testimonial">
+              <div class="testimonial__meta">
+                <time datetime="2020-03-16">Mar 16, 2020</time>
+                <a href="#" class="tag">Infrastructure</a>
+              </div>
+
+              <div class="testimonial__body">
+                <h3 class="testimonial__title">
+                  <a href="#">Reliable for real workloads.</a>
+                </h3>
+                <p class="testimonial__text">
+                  The system feels predictable and transparent. I can configure
+                  everything exactly the way I need, without fighting the
+                  platform. That matters when you work close to the
+                  infrastructure.
+                </p>
+              </div>
+
+              <div class="testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                  class="avatar"
+                />
+                <div>
+                  <p class="author-name"><a href="#">Michael Foster</a></p>
+                  <p class="author-role">Back-end Developer</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="testimonial">
+              <div class="testimonial__meta">
+                <time datetime="2020-03-10">Mar 10, 2020</time>
+                <a href="#" class="tag">Development</a>
+              </div>
+
+              <div class="testimonial__body">
+                <h3 class="testimonial__title">
+                  <a href="#">Clean setup, no distractions.</a>
+                </h3>
+                <p class="testimonial__text">
+                  The environment is straightforward and developer-focused.
+                  Tooling works as expected, and nothing feels locked or hidden.
+                  It lets me focus on building instead of fixing the system.
+                </p>
+              </div>
+
+              <div class="testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                  class="avatar"
+                />
+                <div>
+                  <p class="author-name"><a href="#">Lindsay Walton</a></p>
+                  <p class="author-role">Front-end Developer</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="testimonial">
+              <div class="testimonial__meta">
+                <time datetime="2020-02-12">Feb 12, 2020</time>
+                <a href="#" class="tag">Security</a>
+              </div>
+
+              <div class="testimonial__body">
+                <h3 class="testimonial__title">
+                  <a href="#">Built for learning and testing.</a>
+                </h3>
+                <p class="testimonial__text">
+                  The platform makes it easy to experiment, test assumptions,
+                  and understand how systems behave under pressure. It is well
+                  suited for security research and hands-on learning.
+                </p>
+              </div>
+
+              <div class="testimonial__author">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                  class="avatar"
+                />
+                <div>
+                  <p class="author-name"><a href="#">Tom Cook</a></p>
+                  <p class="author-role">Cyber Security</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--Contact-->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="contact__intro">
+            <h2 class="contact__title">Contact</h2>
+            <p class="contact__desc">
+              Get in touch for questions, collaboration, or general inquiries.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div class="info-block">
+                <h3>General inquiries</h3>
+                <p>For general questions about products, availability, or usage.</p>
+                <p class="mono">contact@alpa.web.id</p>
+              </div>
+
+              <div class="info-block">
+                <h3>Technical discussion</h3>
+                <p>For development, infrastructure, or security related topics.</p>
+                <p class="mono">tech@alpa.web.id</p>
+              </div>
+
+              <div class="info-block">
+                <h3>Location</h3>
+                <p>Remote-first. Operating online.</p>
+              </div>
+            </div>
+
+            <form class="contact-form">
+              <div class="field">
+                <label>Name</label>
+                <input type="text" />
+              </div>
+
+              <div class="field">
+                <label>Email</label>
+                <input type="email" />
+              </div>
+
+              <div class="field">
+                <label>Message</label>
+                <textarea rows="5"></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">Send message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!--Footer-->
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="footer-grid">
+            <div>
+              <h3>Architect</h3>
+              <p>
+                Open systems and developer-focused hardware designed for modern
+                development and security learning.
+              </p>
+            </div>
+
+            <div>
+              <h4>Products</h4>
+              <ul>
+                <li><a href="#product">ArchServer</a></li>
+                <li><a href="#product">ArchPC</a></li>
+                <li><a href="#product">ArchBook</a></li>
+                <li><a href="#product">ArchPhone</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#about">Documentation</a></li>
+                <li><a href="https://www.kali.org/">Security</a></li>
+                <li><a href="https://archlinux.org/">Open Source</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4>Project</h4>
+              <ul>
+                <li>Open Source project</li>
+                <li>Built with Arch Linux</li>
+                <li>Developer-Sercurity focused</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>© 2026 Architect. All rights reserved.</p>
+            <p class="mono">Built for Developers and Security.</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>
