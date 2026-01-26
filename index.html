@@ -6,7 +6,7 @@
   <title>XI TKJ 3</title>
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,158 +23,235 @@
   </script>
 </head>
 
-<body class="font-poppins bg-slate-100 text-slate-800">
+<body class="font-poppins bg-slate-50 text-slate-800">
 
 <!-- HEADER -->
-<header class="bg-white shadow fixed top-0 w-full z-50">
-  <div class="flex items-center justify-between px-4 py-3">
+<header class="bg-white/80 backdrop-blur shadow-sm fixed top-0 w-full z-50 border-b border-slate-200">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+
     <div class="flex items-center gap-3">
-      <img src="assets/icon/tkj-3.jpg" alt="TKJ 3" class="w-10 h-10 rounded-full">
-      <h1 class="font-semibold text-lg">XI TKJ 3</h1>
+      <img src="assets/icon/tkj-3.jpg" alt="TKJ 3" class="w-10 h-10 rounded-full ring-2 ring-blue-500/40 object-cover">
+      <h1 class="font-bold text-lg tracking-wide">XI TKJ 3</h1>
     </div>
 
-    <button onclick="toggleNav()" class="md:hidden">
-      <img src="assets/icon/list.png" alt="Menu" class="w-7 h-7">
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+      <a href="#beranda" class="hover:text-blue-600 transition">Beranda</a>
+      <a href="#jadwal" class="hover:text-blue-600 transition">Jadwal</a>
+      <a href="#prestasi" class="hover:text-blue-600 transition">Prestasi</a>
+      <a href="#sosmed" class="hover:text-blue-600 transition">Sosmed</a>
+    </nav>
+
+    <!-- Mobile Button -->
+    <button onclick="toggleNav()" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
     </button>
 
-    <nav class="hidden md:flex gap-6 font-medium">
-      <a href="#beranda" class="hover:text-blue-600">Beranda</a>
-      <a href="#jadwal" class="hover:text-blue-600">Jadwal</a>
-      <a href="#prestasi" class="hover:text-blue-600">Prestasi</a>
-    </nav>
   </div>
 
   <!-- MOBILE NAV -->
-  <div id="mobileNav" class="hidden flex-col bg-white border-t md:hidden">
-    <a href="#beranda" class="px-4 py-3 border-b">Beranda</a>
-    <a href="#jadwal" class="px-4 py-3 border-b">Jadwal</a>
-    <a href="#prestasi" class="px-4 py-3">Prestasi</a>
+  <div id="mobileNav" class="hidden md:hidden bg-white border-t">
+    <div class="max-w-6xl mx-auto flex flex-col">
+      <a onclick="toggleNav()" href="#beranda" class="px-4 py-3 border-b hover:bg-slate-50">Beranda</a>
+      <a onclick="toggleNav()" href="#jadwal" class="px-4 py-3 border-b hover:bg-slate-50">Jadwal</a>
+      <a onclick="toggleNav()" href="#prestasi" class="px-4 py-3 border-b hover:bg-slate-50">Prestasi</a>
+      <a onclick="toggleNav()" href="#sosmed" class="px-4 py-3 hover:bg-slate-50">Sosmed</a>
+    </div>
   </div>
 </header>
 
 <!-- MAIN -->
-<main class="pt-24 px-4 space-y-12 max-w-md mx-auto">
+<main class="pt-28 px-4 space-y-16 max-w-6xl mx-auto">
 
-  <!-- BERANDA -->
-  <section id="beranda" class="space-y-4">
-    <img src="assets/img/kelas.jpg" alt="Foto Kelas" class="rounded-xl shadow">
-    <h2 class="text-xl font-semibold">
-      Selamat Datang di Website Kelas XI TKJ 3
-    </h2>
-    <p class="text-sm leading-relaxed">
-      Website ini dibuat sebagai pusat informasi, dokumentasi kegiatan,
-      dan catatan prestasi kelas <strong>XI TKJ 3</strong>.
-    </p>
+  <!-- HERO / BERANDA -->
+  <section id="beranda" class="grid gap-8 lg:grid-cols-2 items-center">
+    <div class="space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+        Website Resmi Kelas
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-bold leading-tight">
+        Selamat Datang di Website <span class="text-blue-600">XI TKJ 3</span>
+      </h2>
+
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+        Website ini dibuat sebagai pusat informasi, dokumentasi kegiatan,
+        dan catatan prestasi kelas <b>XI TKJ 3</b>.  
+        Tetap kompak, tetap gaspol, tetap waras 😄
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="#jadwal"
+          class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-semibold shadow hover:bg-blue-700 transition">
+          Lihat Jadwal
+        </a>
+        <a href="#prestasi"
+          class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold hover:border-blue-500 hover:text-blue-600 transition">
+          Lihat Prestasi
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <img src="assets/img/kelas.jpg" alt="Foto Kelas"
+        class="w-full rounded-2xl shadow-lg object-cover aspect-[16/10]">
+      <div class="absolute -bottom-4 left-4 bg-white rounded-xl shadow px-4 py-3 border border-slate-200">
+        <p class="text-xs text-slate-500">Kelas</p>
+        <p class="text-sm font-bold">XI TKJ 3</p>
+      </div>
+    </div>
   </section>
 
   <!-- JADWAL -->
-  <section id="jadwal" class="space-y-4">
-    <h2 class="text-xl font-semibold">Jadwal Pelajaran</h2>
-
-    <!-- Senin -->
-    <div class="bg-white rounded-xl p-4 shadow space-y-2">
-      <div class="flex justify-between font-semibold">
-        <span>Senin</span>
-        <span>F23</span>
+  <section id="jadwal" class="space-y-6">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-bold">Jadwal Pelajaran</h2>
+        <p class="text-sm text-slate-600">Jadwal rapi biar gak ngira-ngira 🤓</p>
       </div>
-      <ul class="list-disc list-inside text-sm">
-        <li>Upacara</li>
-        <li>PAIBP</li>
-        <li>Bahasa Indonesia</li>
-        <li>Bahasa Inggris</li>
-      </ul>
+      <span class="hidden sm:inline text-xs text-slate-500">Update: 2025</span>
     </div>
 
-    <!-- Selasa -->
-    <div class="bg-white rounded-xl p-4 shadow space-y-2">
-      <div class="flex justify-between font-semibold">
-        <span>Selasa</span>
-        <span>F24</span>
-      </div>
-      <ul class="list-disc list-inside text-sm">
-        <li>Olahraga</li>
-        <li>Bahasa Arab</li>
-        <li>Kemuhammadiyahan</li>
-        <li>BK</li>
-        <li>Matematika</li>
-      </ul>
-    </div>
+    <!-- GRID CARD -->
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-    <!-- Rabu -->
-    <div class="bg-white rounded-xl p-4 shadow space-y-2">
-      <div class="flex justify-between font-semibold">
-        <span>Rabu</span>
-        <span>Lab 1</span>
+      <!-- Senin -->
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 hover:shadow-md transition">
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="font-bold text-lg">Senin</h3>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-600">F23</span>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span>✅</span> Upacara</li>
+          <li class="flex gap-2"><span>✅</span> PAIBP</li>
+          <li class="flex gap-2"><span>✅</span> Bahasa Indonesia</li>
+          <li class="flex gap-2"><span>✅</span> Bahasa Inggris</li>
+        </ul>
       </div>
-      <ul class="list-disc list-inside text-sm">
-        <li>Praktikum</li>
-        <li>Web</li>
-      </ul>
-    </div>
 
-    <!-- Kamis -->
-    <div class="bg-white rounded-xl p-4 shadow space-y-2">
-      <div class="flex justify-between font-semibold">
-        <span>Kamis</span>
-        <span>F32</span>
+      <!-- Selasa -->
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 hover:shadow-md transition">
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="font-bold text-lg">Selasa</h3>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-600">F24</span>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span>✅</span> Olahraga</li>
+          <li class="flex gap-2"><span>✅</span> Bahasa Arab</li>
+          <li class="flex gap-2"><span>✅</span> Kemuhammadiyahan</li>
+          <li class="flex gap-2"><span>✅</span> BK</li>
+          <li class="flex gap-2"><span>✅</span> Matematika</li>
+        </ul>
       </div>
-      <ul class="list-disc list-inside text-sm">
-        <li>PKK</li>
-        <li>Bahasa Jawa</li>
-        <li>Sejarah Indonesia</li>
-        <li>Web</li>
-      </ul>
-    </div>
 
-    <!-- Jumat -->
-    <div class="bg-white rounded-xl p-4 shadow space-y-2">
-      <div class="flex justify-between font-semibold">
-        <span>Jumat</span>
-        <span>Lab 1</span>
+      <!-- Rabu -->
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 hover:shadow-md transition">
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="font-bold text-lg">Rabu</h3>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-600">Lab 1</span>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span>✅</span> Praktikum</li>
+          <li class="flex gap-2"><span>✅</span> Web</li>
+        </ul>
       </div>
-      <ul class="list-disc list-inside text-sm">
-        <li>Praktikum</li>
-      </ul>
+
+      <!-- Kamis -->
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 hover:shadow-md transition">
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="font-bold text-lg">Kamis</h3>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-600">F32</span>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span>✅</span> PKK</li>
+          <li class="flex gap-2"><span>✅</span> Bahasa Jawa</li>
+          <li class="flex gap-2"><span>✅</span> Sejarah Indonesia</li>
+          <li class="flex gap-2"><span>✅</span> Web</li>
+        </ul>
+      </div>
+
+      <!-- Jumat -->
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 hover:shadow-md transition">
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="font-bold text-lg">Jumat</h3>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-600">Lab 1</span>
+        </div>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span>✅</span> Praktikum</li>
+        </ul>
+      </div>
+
+      <!-- Bonus card info -->
+      <div class="rounded-2xl p-5 border border-dashed border-slate-300 bg-slate-50 flex items-center">
+        <p class="text-sm text-slate-600">
+          💡 Tips: Jadwal bisa kamu ubah jadi <b>table</b> juga kalau mau versi “rapor mode”.
+        </p>
+      </div>
+
     </div>
   </section>
 
   <!-- PRESTASI -->
-  <section id="prestasi" class="space-y-4">
-    <h2 class="text-xl font-semibold">Penghargaan</h2>
-
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h3 class="font-semibold">Rahmatan Ihsan</h3>
-      <p class="text-sm">Juara 1 Lomba Tenis Meja tingkat Kabupaten</p>
+  <section id="prestasi" class="space-y-6">
+    <div>
+      <h2 class="text-xl sm:text-2xl font-bold">Prestasi & Penghargaan</h2>
+      <p class="text-sm text-slate-600">Catatan kejayaan anak-anak TKJ 3 🏆</p>
     </div>
 
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h3 class="font-semibold">Aisyah Suciana</h3>
-      <p class="text-sm">Juara 3 Lomba Tapak Suci tingkat Provinsi</p>
-    </div>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-    <div class="bg-white p-4 rounded-xl shadow">
-      <h3 class="font-semibold">Vallen Gabriel Samsih Putra</h3>
-      <p class="text-sm">Juara 1 Lomba Renang tingkat Internasional</p>
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+        <p class="text-xs font-semibold text-blue-600 mb-2">Juara 1</p>
+        <h3 class="font-bold text-base">Rahmatan Ihsan</h3>
+        <p class="text-sm text-slate-600">Lomba Tenis Meja tingkat Kabupaten</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+        <p class="text-xs font-semibold text-blue-600 mb-2">Juara 3</p>
+        <h3 class="font-bold text-base">Aisyah Suciana</h3>
+        <p class="text-sm text-slate-600">Lomba Tapak Suci tingkat Provinsi</p>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+        <p class="text-xs font-semibold text-blue-600 mb-2">Juara 1</p>
+        <h3 class="font-bold text-base">Vallen Gabriel Samsih Putra</h3>
+        <p class="text-sm text-slate-600">Lomba Renang tingkat Internasional</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- SOSIAL MEDIA -->
-  <section class="bg-blue-600 text-white p-5 rounded-xl space-y-3">
-    <h2 class="font-semibold text-lg">Sosial Media Kelas</h2>
-    <div class="flex gap-4 text-sm">
-      <a href="#" class="underline">Instagram</a>
-      <a href="#" class="underline">TikTok</a>
-      <a href="#" class="underline">WhatsApp</a>
+  <!-- SOSMED -->
+  <section id="sosmed" class="rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+      <div>
+        <h2 class="font-bold text-xl">Sosial Media Kelas</h2>
+        <p class="text-sm text-white/80">Biar gampang update info & momen.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 text-sm">
+        <a href="#" class="px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 transition">Instagram</a>
+        <a href="#" class="px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 transition">TikTok</a>
+        <a href="#" class="px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 transition">WhatsApp</a>
+      </div>
     </div>
   </section>
 
 </main>
 
 <!-- FOOTER -->
-<footer class="text-center text-xs text-slate-500 py-6">
-  © XI TKJ 3, 2025
+<footer class="text-center text-xs text-slate-500 py-10">
+  © XI TKJ 3, 2025 • Dibuat pakai Tailwind ✨
 </footer>
 
-<script src="script.js"></script>
+<script>
+  function toggleNav() {
+    const nav = document.getElementById("mobileNav");
+    nav.classList.toggle("hidden");
+  }
+</script>
 </body>
 </html>
