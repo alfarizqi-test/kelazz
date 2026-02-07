@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Laravel Breeze + Spatie Permission</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <div class="max-w-4xl mx-auto py-10 px-6">
+
+        <header class="mb-10">
+            <h1 class="text-3xl font-bold text-gray-800">
+                Integrasi Laravel Breeze dengan Spatie Laravel Permission
+            </h1>
+            <p class="text-gray-600 mt-2">
+                Panduan langkah demi langkah untuk menggabungkan autentikasi sederhana Laravel Breeze dengan sistem role & permission dari Spatie.
+            </p>
+        </header>
+
+        <section class="bg-white shadow rounded-lg p-6 mb-8">
+            <p class="mb-4">
+                Kita gabungkan dua dunia yang sering bikin nyaman developer Laravel: 
+                <strong>Laravel Breeze</strong> untuk autentikasi sederhana, dan 
+                <strong>Spatie Laravel Permission</strong> untuk manajemen role & permission.
+            </p>
+            <p>
+                Kombinasi ini sangat populer untuk membangun aplikasi yang rapi tapi tetap fleksibel.
+                Kita jalan pelan-pelan seperti resep masakan ilmiah 🧪.
+            </p>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">1. Mulai dari Proyek Laravel Bersih</h2>
+
+            <div class="bg-gray-100 p-4 rounded mb-4">
+                <code>
+composer create-project laravel/laravel nama-proyek
+cd nama-proyek
+                </code>
+            </div>
+
+            <p class="mb-2">Siapkan database di file <code>.env</code>:</p>
+
+            <div class="bg-gray-100 p-4 rounded mb-4">
+                <code>
+DB_DATABASE=nama_db
+DB_USERNAME=root
+DB_PASSWORD=
+                </code>
+            </div>
+
+            <p>Lalu jalankan migrate:</p>
+
+            <div class="bg-gray-100 p-4 rounded">
+                <code>php artisan migrate</code>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">BAGIAN A – Install Laravel Breeze</h2>
+
+            <p class="mb-2">Install Breeze:</p>
+
+            <div class="bg-gray-100 p-4 rounded mb-4">
+                <code>
+composer require laravel/breeze --dev
+php artisan breeze:install
+                </code>
+            </div>
+
+            <p class="mb-2">Pilih stack sesuai kebutuhan, misalnya Blade:</p>
+
+            <div class="bg-gray-100 p-4 rounded mb-4">
+                <code>
+php artisan breeze:install blade
+npm install
+npm run dev
+php artisan migrate
+                </code>
+            </div>
+
+            <p>
+                Sampai tahap ini kamu sudah punya fitur:
+                Register, Login, Logout, dan Dashboard.
+            </p>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">BAGIAN B – Install Spatie Laravel Permission</h2>
+
+            <p class="mb-2">Install package:</p>
+
+            <div class="bg-gray-100 p-4 rounded mb-4">
+                <code>composer require spatie/laravel-permission</code>
+            </div>
+
+            <p class="mb-2">Publish config dan migration:</p>
+
+            <div class="bg-gray-100 p-4 rounded mb-4">
+                <code>
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+                </code>
+            </div>
+
+            <p class="mb-2">Lalu migrate lagi:</p>
+
+            <div class="bg-gray-100 p-4 rounded">
+                <code>php artisan migrate</code>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">BAGIAN C – Integrasi ke User Model</h2>
+
+            <p>Tambahkan trait berikut pada <code>app/Models/User.php</code>:</p>
+
+            <div class="bg-gray-100 p-4 rounded mt-4">
+<pre><code>
+use Spatie\Permission\Traits\HasRoles;
+
+class User extends Authenticatable
+{
+    use HasFactory, Notifiable, HasRoles;
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">BAGIAN D – Membuat Role & Permission</h2>
+
+            <p>Buat seeder:</p>
+
+            <div class="bg-gray-100 p-4 rounded mb-4">
+                <code>php artisan make:seeder RolePermissionSeeder</code>
+            </div>
+
+            <p>Isi file seeder:</p>
+
+            <div class="bg-gray-100 p-4 rounded mt-4">
+<pre><code>
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
+class RolePermissionSeeder extends Seeder
+{
+    public function run()
+    {
+        Permission::create(['name' => 'manage users']);
+        Permission::create(['name' => 'edit posts']);
+        Permission::create(['name' => 'delete posts']);
+
+        $admin = Role::create(['name' => 'admin']);
+        $user  = Role::create(['name' => 'user']);
+
+        $admin->givePermissionTo(Permission::all());
+    }
+}
+</code></pre>
+            </div>
+
+            <p class="mt-4">Daftarkan di DatabaseSeeder lalu jalankan:</p>
+
+            <div class="bg-gray-100 p-4 rounded">
+                <code>php artisan db:seed</code>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">BAGIAN E – Integrasi dengan Breeze</h2>
+
+            <p>
+                Setiap user baru otomatis mendapat role <strong>user</strong>.
+                Tambahkan kode ini pada <code>RegisteredUserController</code>:
+            </p>
+
+            <div class="bg-gray-100 p-4 rounded mt-4">
+<pre><code>
+$user = User::create([
+    'name' => $request->name,
+    'email' => $request->email,
+    'password' => Hash::make($request->password),
+]);
+
+$user->assignRole('user');
+</code></pre>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">BAGIAN F – Proteksi Route</h2>
+
+            <p>Contoh proteksi berdasarkan role:</p>
+
+            <div class="bg-gray-100 p-4 rounded mb-4">
+<pre><code>
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+})->middleware(['auth', 'role:admin']);
+</code></pre>
+            </div>
+
+            <p>Atau berdasarkan permission:</p>
+
+            <div class="bg-gray-100 p-4 rounded">
+<pre><code>
+Route::get('/posts', function () {
+    return view('posts');
+})->middleware(['auth', 'permission:edit posts']);
+</code></pre>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">BAGIAN G – Blade Directive</h2>
+
+            <p>Contoh pengecekan role di Blade:</p>
+
+            <div class="bg-gray-100 p-4 rounded mb-4">
+<pre><code>
+@role('admin')
+    <a href="/admin">Admin Panel</a>
+@endrole
+</code></pre>
+            </div>
+
+            <p>Cek permission:</p>
+
+            <div class="bg-gray-100 p-4 rounded">
+<pre><code>
+@can('edit posts')
+    <button>Edit Post</button>
+@endcan
+</code></pre>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">BAGIAN H – Membuat Admin Manual</h2>
+
+            <div class="bg-gray-100 p-4 rounded">
+<pre><code>
+php artisan tinker
+
+$user = App\Models\User::find(1);
+$user->assignRole('admin');
+</code></pre>
+            </div>
+        </section>
+
+        <section class="bg-blue-50 p-6 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">Pola Mental</h2>
+
+            <ul class="list-disc ml-6">
+                <li>Breeze = pintu rumah (login system)</li>
+                <li>Spatie = penjaga ruangan (role & permission)</li>
+            </ul>
+
+            <p class="mt-4">
+                Breeze memastikan “siapa kamu”.  
+                Spatie menentukan “kamu boleh ngapain”.
+            </p>
+
+            <p class="mt-4 font-semibold">
+                Dua paket, dua tanggung jawab berbeda, satu harmoni semesta Laravel 🚀
+            </p>
+        </section>
+
+        <footer class="mt-10 text-center text-gray-500">
+            Dokumentasi dibuat otomatis dengan Tailwind CSS
+        </footer>
+
+    </div>
+
+</body>
+</html>
